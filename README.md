@@ -1,6 +1,8 @@
 # EchoAI
 
-EchoAI 是一个使用 Next.js 15 构建的精美 AI 对话界面演示项目，致力于打造流畅优雅的用户体验。
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/echoai)
+
+EchoAI 是一个使用 Next.js 15 构建的精美 AI 对话界面演示项目，致力于打造流畅优雅的用户体验。采用 Bun 作为高性能运行时，带来极致的开发体验。
 
 ## 🌟 主要特性
 
@@ -53,6 +55,13 @@ EchoAI 是一个使用 Next.js 15 构建的精美 AI 对话界面演示项目，
 
 ## 🚀 快速开始
 
+0. 前置要求
+
+```bash
+# 安装 Bun
+curl -fsSL https://bun.sh/install | bash
+```
+
 1. 克隆项目
 
 ```bash
@@ -63,20 +72,29 @@ cd echoai
 2. 安装依赖
 
 ```bash
-npm install
-# 或者使用 pnpm
-pnpm install
+bun install  # 比 npm/pnpm 快 20+ 倍
 ```
 
 3. 启动开发服务器
 
 ```bash
-npm run dev
-# 或者使用 pnpm
-pnpm dev
+bun dev  # 毫秒级的启动速度
 ```
 
 4. 在浏览器中打开 [http://localhost:3000](http://localhost:3000)
+
+## 🌩️ 部署
+
+### Vercel 部署
+
+点击上方的 "Deploy with Vercel" 按钮，即可一键部署到 Vercel 平台。
+
+### 手动构建
+
+```bash
+bun run build  # 构建生产版本
+bun run start  # 启动生产服务器
+```
 
 ## 📝 项目目的
 
