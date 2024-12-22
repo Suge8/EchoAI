@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 渐变色背景浅色模式默认值 */
+  --gradient-from: rgba(0, 0, 0, 0.08);
+  --gradient-to: rgba(0, 0, 0, 0.02);
+}
+
+/* 渐变色背景深色模式的值 */
+:root[class~="dark"] {
+  --gradient-from: rgba(255, 255, 255, 0.15);
+  --gradient-to: rgba(255, 255, 255, 0.06);
+}
