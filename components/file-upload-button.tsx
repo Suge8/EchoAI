@@ -70,7 +70,7 @@ export const FileUploadButton = () => {
               }}
               onDragLeave={() => setIsDragging(false)}
               onDrop={handleDrop}
-              onClick={() => {
+              onPress={() => {
                 // 创建一个隐藏的文件输入框并触发点击
                 const input = document.createElement("input");
                 input.type = "file";

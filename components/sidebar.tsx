@@ -61,7 +61,7 @@ export const Sidebar = () => {
             borderTopRightRadius: 99,
             borderBottomRightRadius: 99,
           }}
-          onClick={() => setIsOpen(!isOpen)}
+          onPress={() => setIsOpen(!isOpen)}
         >
           {/* 按钮图标 */}
           <motion.div

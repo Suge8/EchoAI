@@ -1,10 +1,10 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/popover";
 import { Button } from "@nextui-org/button";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { Icon } from "./icon";
-
+import dynamic from 'next/dynamic';
 // 定义模型类型
 type ModelType = {
   key: string;
@@ -35,10 +35,20 @@ export const modelList: ModelType[] = [
   }
 ];
 
+const LoginModal = dynamic(() => import('./login-modal').then(mod => mod.LoginModal), {
+  loading: () => <div>加载中...</div>
+});
+
 export const ModelSelect = () => {
-  // 状态管理选中的模型
   const [selectedModel, setSelectedModel] = useState<ModelType>(modelList[0]);
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleModelSelect = useCallback((item: ModelType) => {
+    setSelectedModel(item);
+    requestAnimationFrame(() => {
+      setIsOpen(false);
+    });
+  }, []);
 
   return (
     <Popover 
@@ -80,16 +90,11 @@ export const ModelSelect = () => {
               } : undefined}
               startContent={<Icon type={item.icon} size={20} />}
               endContent={
-                <div className="ml-auto">
-                  {selectedModel.key === item.key && (
-                    <CheckIcon className="h-4 w-4 text-foreground" style={{ strokeWidth: 3 }} />
-                  )}
-                </div>
+                selectedModel.key === item.key ? (
+                  <CheckIcon className="h-4 w-4 text-foreground" style={{ strokeWidth: 3 }} />
+                ) : null
               }
-              onClick={() => {
-                setSelectedModel(item);
-                setIsOpen(false);
-              }}
+              onPress={() => handleModelSelect(item)}
             >
               <div className="flex flex-col items-start">
                 <span>{item.label}</span>
@@ -100,5 +105,5 @@ export const ModelSelect = () => {
         </div>
       </PopoverContent>
     </Popover>
-  )
-}
+  );
+};

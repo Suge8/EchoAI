@@ -143,7 +143,7 @@ export const Announcement = ({ isOpen, onOpenChange }: AnnouncementProps) => {
                   color="primary"
                   radius="full"
                   size="lg"
-                  onClick={() => onClose()}
+                  onPress={() => onClose()}
                   aria-label="确认已阅读"
                   style={{width: "120px", height: "50px"}}
                 >

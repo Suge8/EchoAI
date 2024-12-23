@@ -122,8 +122,7 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                   size="lg"
                   radius="full"
                   isIconOnly
-                  onClick={(e) => {
-                    e.stopPropagation();
+                  onPress={() => {
                     handleLogout();
                   }}
                   >
@@ -137,8 +136,7 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                 size="lg"
                 radius="full"
                 isIconOnly
-                onClick={(e) => {
-                  e.stopPropagation();
+                onPress={() => {
                   onOpen();
                 }}
               >
@@ -161,8 +159,7 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                 size="lg"
                 radius="full"
                 isIconOnly
-                onClick={(e) => {
-                  e.stopPropagation();
+                onPress={() => {
                   handleLogout();
                 }}
               >
