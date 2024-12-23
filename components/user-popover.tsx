@@ -122,7 +122,10 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                   size="lg"
                   radius="full"
                   isIconOnly
-                  onClick={handleLogout}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleLogout();
+                  }}
                   >
                     <MdDisplaySettings className="text-secondary-500" style={{ width: '32px', height: '32px' }}/>
                 </Button>
@@ -134,7 +137,10 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                 size="lg"
                 radius="full"
                 isIconOnly
-                onClick={onOpen}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpen();
+                }}
               >
                 <BellIcon className="text-primary-500" style={{ width: '32px', height: '32px' }}/>
               </Button>
@@ -155,7 +161,10 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                 size="lg"
                 radius="full"
                 isIconOnly
-                onClick={handleLogout}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleLogout();
+                }}
               >
                 <FaDoorOpen className="text-danger-500" style={{ width: '32px', height: '32px' }}/>
               </Button>
