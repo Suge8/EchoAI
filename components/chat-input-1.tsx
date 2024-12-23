@@ -43,9 +43,10 @@ export const ChatInput1 = () => {
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         classNames={{
-          base: "max-w-full flex-nowrap",
-          inputWrapper: "rounded-3xl backdrop-blur-md bg-white/5 flex-nowrap whitespace-nowrap",
-          input: "text-2xl placeholder:text-center py-2 overflow-x-auto",
+          base: "max-w-full flex-nowrap [&_textarea::placeholder]:whitespace-nowrap [&_textarea::placeholder]:text-center [&_textarea::placeholder]:w-full",
+          inputWrapper: "rounded-3xl backdrop-blur-md bg-white/5 flex-nowrap whitespace-nowrap h-[52px]",
+          input: "text-2xl py-2 overflow-x-auto whitespace-nowrap",
+          innerWrapper: "!h-full",
         }}
 
 
