@@ -145,12 +145,17 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
 
               {/* 主题 */}
               <Button
+                as="div"
                 variant="light"
                 size="lg"
                 radius="full"
                 isIconOnly
+                className="cursor-default"
               >
-                <ThemeSwitch size={32} />
+                <ThemeSwitch 
+                  size={32}
+                  className="cursor-pointer"
+                />
               </Button>
 
               {/* 退出 */}
