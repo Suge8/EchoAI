@@ -69,6 +69,12 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
 
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
+  const handleAnnouncementClick = () => {
+    // 关闭 Popover，打开公告
+    onOpen();        // 打开公告
+    onOpenChange();   // 关闭 Popover
+  };
+
   return (
     <>
       <Popover 
@@ -137,7 +143,7 @@ export const UserPopover = ({ children }: UserPopoverProps) => {
                 radius="full"
                 isIconOnly
                 onPress={() => {
-                  onOpen();
+                  handleAnnouncementClick();
                 }}
               >
                 <BellIcon className="text-primary-500" style={{ width: '32px', height: '32px' }}/>
