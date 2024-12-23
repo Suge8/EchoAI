@@ -18,31 +18,23 @@ interface AnnouncementProps {
     onOpenChange: (isOpen: boolean) => void;
 }
 
-// 动画配置
+// 优化后的动画配置
 const motionConfig = {
   variants: {
     enter: {
-      y: 0,
-      scale: 1,
-      rotate: 0,
       opacity: 1,
+      y: 0,
       transition: {
-        duration: 0.3,
-        type: "spring",
-        bounce: 0.1,
-        damping: 10,
+        duration: 0.5,
+        ease: "easeOut"
       }
     },
     exit: {
-      y: -100,
-      scale: 0.5,
-      rotate: -15,
       opacity: 0,
+      y: -100,
       transition: {
-        duration: 0.5,
-        type: "spring",
-        bounce: 0.2,
-        damping: 10,
+        duration: 0.3,
+        ease: "easeIn"
       }
     }
   }
@@ -105,7 +97,7 @@ export const Announcement = ({ isOpen, onOpenChange }: AnnouncementProps) => {
       isDismissable={false}
       motionProps={motionConfig}
       classNames={{
-        base: "bg-background dark:bg-background",
+        base: "bg-background dark:bg-background will-change-transform transform-gpu",
         header: "border-b border-divider px-6",
         body: "p-6",
         footer: "border-t border-divider px-6 py-4",
