@@ -5,8 +5,6 @@ export default function Home() {
   return (
     <div className="flex-1 flex flex-col h-full relative overflow-hidden">
 
-      {/* 背景 */}
-      <Background />
 
       {/* 输入框 */}
       <div className="flex-1 flex w-full items-center justify-center relative z-10">
