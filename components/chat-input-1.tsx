@@ -45,7 +45,7 @@ export const ChatInput1 = () => {
         classNames={{
           base: "max-w-full flex-nowrap [&_textarea::placeholder]:whitespace-nowrap [&_textarea::placeholder]:text-center [&_textarea::placeholder]:w-full",
           inputWrapper: "rounded-3xl backdrop-blur-md bg-white/5 flex-nowrap whitespace-nowrap h-[52px]",
-          input: "text-2xl py-2 overflow-x-auto whitespace-nowrap",
+          input: "text-2xl py-2 overflow-x-auto whitespace-nowrap placeholder:text-center",
           innerWrapper: "!h-full",
         }}
 

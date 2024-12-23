@@ -2,14 +2,15 @@ export const Background = () => {
   return (
     <>
       <div 
-        className="fixed inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+        className="fixed inset-0 flex items-start justify-center pointer-events-none select-none z-0"
+        style={{ paddingTop: '25vh' }}
+      >
         <span 
           className="font-black whitespace-nowrap bg-clip-text text-center w-full"
           style={{
             fontSize: "17vw",
             letterSpacing: "0.05em",
             fontFamily: "var(--font-noto-sans)",
-            transform: "rotate(-10deg)",
             display: "inline-block",
             fontWeight: 900,
             background: `linear-gradient(
